@@ -1,0 +1,12 @@
+<div class="title1">
+  <h1>Nuevo Estado</h1>
+<%= stylesheet_link_tag "edit", "data-turbo-track": "reload" %>
+  <%= render "form", state_aux: @state_aux %>
+
+<br>
+
+  <div>
+    <%= link_to "Regresar a estados", state_auxs_url %>
+    <%# <a><%= link_to "Eliminar Este Asistente ?", @state_aux, method: :delete %>
+  </div>
+</div>

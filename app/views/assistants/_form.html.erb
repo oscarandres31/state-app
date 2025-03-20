@@ -1,0 +1,35 @@
+<div class="grid-container">
+<%= form_with(model: assistant) do |form| %>
+<%# <p style="color: green"><%= notice </p> %>
+<%# <div data-controller ="notification_channel"></div> %>
+  <%# <%= stylesheet_link_tag "edit", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+        <%= form.label :name,"Nombres", style: "display: block" %>
+        <%= form.text_field :name, :require => true %>
+
+        <%= form.label :state_aux_id,"Estado", style: "display: block" %>
+        <%= form.collection_select :state_aux_id, StateAux.all.order(state_now: :asc), :id, :state_now, :require => true %>
+        <%= form.label :photo %>
+        <%= form.file_field :photo, id: 'image_input' %>
+        <%= image_tag assistant.photo, width: 200 if assistant.photo.attached? %>
+          <br>
+        <br>
+          <div id="image_preview" >
+          </div>
+        <%= form.submit %>
+<% end %>
+</div>
+<script>
+  document.getElementById('image_input').addEventListener('change', function(event) {
+    var imagePreview = document.getElementById('image_preview');
+    imagePreview.innerHTML = ''; // Limpio el contenido anterior
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      var img = document.createElement('img');
+      img.src = e.target.result;
+      img.style.maxWidth = '300px'; // Ajusto el tamaño según sea necesario
+      imagePreview.appendChild(img);
+    }
+    reader.readAsDataURL(event.target.files[0]);
+  });
+</script>

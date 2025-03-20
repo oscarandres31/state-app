@@ -1,0 +1,32 @@
+
+<div class="container">
+          <h1>Lista De Estados</h1>
+          <%= link_to "Agregar Nuevo", new_state_aux_url,class: "btn add-new" %>
+          <%= stylesheet_link_tag "assistants", "data-turbo-track": "reload" %>
+          <table class="responsive-table">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% if @state_aux.present? %>
+              <% @state_aux.each do |assistant| %>
+                <tr>
+                  <td><%= assistant.id %></td>
+                  <td><%= assistant.state_now %></td>
+                  <td>
+                    <%= link_to "Editar", edit_state_aux_url(assistant), class: "btn edit" %>
+                  </td>
+                </tr>
+              <% end %>
+              <% else %>
+                <tr>
+                  <td colspan="4">no hay Estados disponibke</td>
+                </tr>
+                <% end %>
+            </tbody>
+          </table>
+        </div>

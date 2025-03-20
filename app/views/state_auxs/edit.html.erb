@@ -1,0 +1,12 @@
+<div class="title1">
+  <h1>Modificar Estado</h1>
+<%= stylesheet_link_tag "edit", "data-turbo-track": "reload" %>
+  <%= render "form", state_aux: @state_aux %>
+
+<br>
+
+  <div>
+    <a><%= link_to "Eliminar Este Estado?", @state_aux, method: :delete, data: { confirm: "estas seguro ?"} %></a> |
+    <%= link_to "Regresar a Estados", state_auxs_path%>
+  </div>
+</div>

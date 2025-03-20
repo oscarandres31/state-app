@@ -1,0 +1,35 @@
+ <div class="container">
+          <h1>Lista De Asistentes</h1>
+          <%= link_to "Agregar Nuevo", new_assistant_path,class: "btn add-new" %>
+          <%= stylesheet_link_tag "assistants", "data-turbo-track": "reload" %>
+          <table class="responsive-table">
+            <thead>
+              <tr>
+                <th>Imagen</th>
+                <th>Nombres</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% if @assistant.present? %>
+              <% @assistant.each do |assistan| %>
+                <tr>
+                  <td><%= image_tag assistan.photo, width: 200 if assistan.photo.attached? %></td>
+                  <td><%= assistan.name %></td>
+                  <td><%= assistan.state_aux.state_now  %></td>
+                  <%# <td><%= link_to "Detalle", assistant_path(assistan), class: "btn btn-primary" %>
+                  <td>
+                    <%= link_to "Editar", edit_assistant_path(assistan), class: "btn edit" %>
+                  </td>
+                </tr>
+              <% end %>
+              <% else %>
+                <tr>
+                  <td colspan="4">no hay asistentes disponibles</td>
+                </tr>
+                <% end %>
+            </tbody>
+          </table>
+        </div>
+          <div data-controller ="notification_channel"></div>

@@ -1,0 +1,77 @@
+body{
+  background-image: url("../assets/beauty-salon-3277314_640.jpg");
+  /*background-repeat: no-repeat;*/
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.Login-container {
+  background: rgba(255, 255, 255, 0.575);
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  color: rgba(255, 255, 255, 0.082);
+}
+
+.Login-container h2 {
+  text-align: center;
+  margin-bottom: 1em;
+  color: rgb(7, 19, 59);
+}
+
+.Login-container label {
+  color: rgb(7, 19, 59);
+}
+
+.Login-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.Login-container form input[type="email"],
+.Login-container form input[type="password"],
+.Login-container form input[type="submit"] {
+  margin-bottom: 1em;
+  padding: 0.75em;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.Login-container form input[type="email"],
+.Login-container form input[type="password"] {
+  background: rgba(247, 242, 240, 0.8);
+  color: #333;
+}
+
+.Login-container form input[type="submit"] {
+  background: #333;
+  color: white;
+  cursor: pointer;
+}
+
+.Login-container form input[type="submit"]:hover {
+  background: rgb(241, 145, 55);
+}
+
+.Login-container a {
+  color: rgb(7, 19, 59);
+  text-align: center;
+  display: block;
+  margin-top: 1em;
+}
+
+@media (max-width: 600px){
+  .Login-container {
+    max-width: 100%;
+    padding: 15px;
+  }
+}

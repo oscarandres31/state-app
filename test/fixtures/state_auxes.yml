@@ -1,0 +1,15 @@
+# == Schema Information
+#
+# Table name: state_auxes
+#
+#  id         :bigint           not null, primary key
+#  state_now  :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+one:
+  state_now: "Test StateAux"
+
+two:
+  state_now: MyString

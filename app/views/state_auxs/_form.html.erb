@@ -1,0 +1,11 @@
+<%= form_with model: @state_aux, url: state_auxs_path, local: true do |form| %>
+
+  <%= form.label :state_aux, 'Estado Nuevo', style: "display: block" %>
+  <%= form.text_field 'state_auxs[state_now]', :require => true  %>
+
+
+  <div>
+    <%# <%= submit_tag 'submit' %>
+    <%= form.submit "guardar estado" %>
+  </div>
+<% end %>

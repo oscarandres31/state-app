@@ -1,0 +1,14 @@
+<div class="title1">
+  <h1>Detalle de Asistente</h1>
+     <%= stylesheet_link_tag "edit", "data-turbo-track": "reload" %>
+     <%= javascript_importmap_tags %>
+  <%= render "form", assistant: @assistant %>
+
+<br>
+  <a>
+    <a><%= link_to "Eliminar Este Asistente ?", @assistant, method: :delete, data: { turbo_method: :delete, confirm: "estas seguro ?" } %></a><br>
+    <a>
+    <%= link_to "Regresar a Asistentes", assistants_path %></a>
+    </div>
+  </div>
+</div>

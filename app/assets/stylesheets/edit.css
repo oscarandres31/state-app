@@ -1,0 +1,112 @@
+body{
+ padding: 10px;
+
+}
+
+ .title1  {
+  background: rgba(255, 255, 255, 0.575);
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 300px;
+  color: rgba(255, 255, 255, 0.082);
+  margin: 50px auto;
+  box-shadow: 0.4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial',sans-serif;
+}
+
+.title1 h1, h2, h3 {
+  text-align: center;
+  margin-bottom: 1em;
+  color: rgb(7, 19, 59);
+}
+
+.grid-container label {
+  color: rgb(7, 19, 59);
+}
+
+ .title1 form {
+  display: flex;
+  flex-direction: column;
+}
+
+.title1 form input[type="text"],
+.title1 form input[type="Collection_select"],
+.title1 form input[type="submit"] {
+  margin-bottom: 1em;
+  padding: 0.75em;
+  border: 1px solid;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.grid-container form input[type="text"],
+.grid-container form input[type="select"] {
+  background: rgba(247, 242, 240, 0.8);
+  color: #333;
+}
+
+.title1 form input[type="submit"],
+.title1 form input[type="button_to"]
+ {
+  background: #333;
+  color: white;
+  cursor: pointer;
+  padding: 12px;
+  transition: background-color 0.3s;
+}
+
+/* .link1 .link2 {
+  background: rgb(95, 93, 93);
+  color: white;
+  cursor: pointer;
+  margin-bottom: 1em;
+  padding: 0.75em;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+} */
+
+ .grid-container form input[type="submit"]:hover {
+  background: rgb(241, 145, 55);
+}
+
+.title1 a, em, i {
+  display: inline-block;
+  margin-top: 10px;
+  color: #0e0a58;
+  text-decoration: none;
+  font-size: 14px;
+  text-align: center;
+}
+
+.title1 a:hover {
+  text-decoration: underline;
+}
+
+.title1.field ,label {
+  display: inline-block;
+  margin-top: 10px;
+  color: #0e0a58;
+  text-decoration: none;
+  font-size: 14px;
+  text-align: center;
+}
+
+.title1 .image_tag {
+  border-radius: 5px;
+}
+
+@media (max-width: 600px){
+  .title1 {
+    max-width: 100%;
+    padding: 15px;
+  }
+}
+/* .grid-container a {
+  color: rgb(7, 19, 59);
+  text-align: center;
+  display: block;
+  margin-top: 1em;
+} */
