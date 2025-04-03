@@ -1,12 +1,8 @@
 class AssistantsController < ApplicationController
   before_action :authenticate_user!
   #before_action :set_assistant, only: [:edit, :show, :update, :destroy]
-  #resources :assistants, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
   def index
-    # puts current_user&.manager?
-     #Rails.logger.debug params.inspect
-     #puts params.inspect
      if current_user&.manager?
       @assistant = Assistant.includes(:state_aux, photo_attachment: :blob).all
       render :index
@@ -42,10 +38,7 @@ class AssistantsController < ApplicationController
   end
 
   def update
-  #  Rails.logger.debug params.inspect
-   #puts params.inspect
     set_assistant
-   # debugger
     if @assistant.update(assistant_params)
       notify_all_users
       redirect_to assistants_path, notice: "actualizado"
@@ -55,7 +48,6 @@ class AssistantsController < ApplicationController
   end
 
   def destroy
-    #Rails.logger.debug
     if current_user.manager?
     set_assistant
     @assistant.destroy
@@ -78,7 +70,7 @@ class AssistantsController < ApplicationController
     ActionCable.server.broadcast(
       "notification_channel",
       {
-        id: @assistant.id,
+        id: @assistant,
         status: @assistant.state_aux_id,
         action: "hola se ha actualizado el estado del Asistente"
       }

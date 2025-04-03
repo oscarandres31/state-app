@@ -1,8 +1,6 @@
 <div class="grid-container">
 <%= form_with(model: assistant) do |form| %>
-<%# <p style="color: green"><%= notice </p> %>
-<%# <div data-controller ="notification_channel"></div> %>
-  <%# <%= stylesheet_link_tag "edit", "data-turbo-track": "reload" %>
+  <%# <p style="color: green"><%= notice %>
   <%= javascript_importmap_tags %>
         <%= form.label :name,"Nombres", style: "display: block" %>
         <%= form.text_field :name, :require => true %>

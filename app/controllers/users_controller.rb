@@ -28,9 +28,6 @@ class UsersController<ApplicationController
   def update
     set_user
     if @user.update(user_params)
-     # ActionCable.server.broadcast "notification_channel_#{@user.id}", {
-        #message "El estado ha cambiado a #{@user.status}"
-     # }
       redirect_to users_path, notice: 'Estado del Auxiliar Actualizado'
     else
       render edit

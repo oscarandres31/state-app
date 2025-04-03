@@ -7,7 +7,7 @@ import "./src/submenu";
 import "controllers";
 import "channels";
 import "bootstrap";
-import "submenu";
+import  submenu from "./submenu";
 //= require rails-ujs
 document.addEventListener('DOMContentLoaded', () => {
   console.log("Rails UJS funcionando:", !!Rails);  // Verifica si Rails UJS está cargado

@@ -139,12 +139,12 @@ body {
 }
 
 /* Mostrar el menú cuando está activo */
-.dropdown:hover .dropdown-menu {
+/*.dropdown:hover .dropdown-menu {
   display: block;
   opacity: 1; /* Hacerlo visible */
-  visibility: visible; /* Asegurarse de que sea visible */
-  transition: opacity 0.3s ease, visibility 0s ease 0s;
-}
+ /* visibility: visible; /* Asegurarse de que sea visible */
+ /* transition: opacity 0.3s ease, visibility 0s ease 0s;
+}*/
 
 
 @media (max-width: 768px) {

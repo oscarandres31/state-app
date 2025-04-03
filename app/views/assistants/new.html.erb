@@ -1,6 +1,6 @@
 <div class="title1">
 <h1>Nuevo Asistente</h1>
-<p style="color: green"><%= notice %></p>
+
  <%= render "form", assistant: @assistant %>
  <%= stylesheet_link_tag "edit", "data-turbo-track": "reload" %>
  <%= image_tag @assistant.photo, width: 200 if @assistant.photo.attached? %>

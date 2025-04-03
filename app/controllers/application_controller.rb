@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
      elsif controller_path == "assistants" && ["new", "create", "update", "edit"].include?(action_name)
        self.class.layout 'visitants'
      else
-       self.class.layout 'application'
+       self.class.layout 'visitants'
      end
    end
 

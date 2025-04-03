@@ -6,7 +6,7 @@
 
 <br>
   <a>
-    <a><%= link_to "Eliminar Este Asistente ?", @assistant, method: :delete, data: { turbo_method: :delete, confirm: "estas seguro ?" } %></a><br>
+    <a><%= link_to "Eliminar Este Asistente ?", @assistant, data: { turbo_method: :delete, confirm: "estas seguro ?" } %></a><br>
     <a>
     <%= link_to "Regresar a Asistentes", assistants_path %></a>
     </div>
