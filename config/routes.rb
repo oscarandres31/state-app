@@ -3,9 +3,6 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
   mount ActionCable.server => '/cable'
- # authenticated :user do
-    #root to: 'devise/registrations#edit', as: :authenticated_root  # O a una página de perfil personalizada
-  #end
 
   resources :users, only: [:show, :edit, :index]
   resources :assistants
