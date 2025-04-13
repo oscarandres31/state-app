@@ -20,16 +20,16 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   #pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  database: <%= ENV["POSTGRESQL_DATABASE"] %>
+ # database: <%= ENV["POSTGRESQL_DATABASE"] %>
   pool: <%= ENV["POSTGRESQL_POOL"] { 5 } %>
   username: <%= ENV["POSTGRESQL_USER"] %>
   password: <%= ENV["POSTGRESQL_PASSWORD"] %>
   host: <%= ENV["POSTGRESQL_HOST"] %>
-  port: <%= ENV["POSTGRESQL_PORT"] { 5432 } %>
+  port: <%= ENV.fetch("POSTGRESQL_PORT",  5432 ) %>
 
 development:
   <<: *default
-  database: state_development
+   database: <%= ENV.fetch("POSTGRESQL_DATABASE", "state_development") %>
   #database: <%= ENV["POSTGRESQL_DATABASE"] %>
 
  # database: <%= ENV.fetch("POSTGRESQL_DATABASE") %>
@@ -89,11 +89,12 @@ test:
 #
 production:
   <<: *default
+   database: <%= ENV["POSTGRESQL_DATABASE"] || "state_production" %>
   #database: state_production
   #username: state
  # password: <%= ENV["STATE_DATABASE_PASSWORD"] %>
-  database: <%= ENV["POSTGRESQL_PRODUCTION_DATABASE"] %>
-  username: <%= ENV["POSTGRESQL_PRODUCTION_USER"] %>
-  password: <%= ENV["POSTGRESQL_PRODUCTION_PASSWORD"] %>
-  host: <%= ENV["POSTGRESQL_PRODUCTION_HOST"] %>
-  port: <%= ENV.fetch("POSTGRESQL_PRODUCTION_PORT", 5432) %>
+  # database: <%= ENV["POSTGRESQL_PRODUCTION_DATABASE"] %>
+  # username: <%= ENV["POSTGRESQL_PRODUCTION_USER"] %>
+  # password: <%= ENV["POSTGRESQL_PRODUCTION_PASSWORD"] %>
+  # host: <%= ENV["POSTGRESQL_PRODUCTION_HOST"] %>
+  # port: <%= ENV.fetch("POSTGRESQL_PRODUCTION_PORT", 5432) %>
